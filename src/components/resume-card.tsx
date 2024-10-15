@@ -82,7 +82,7 @@ export const ResumeCard = ({
             )}
           </CardHeader>
           {badges && (
-            <span className="inline-flex gap-x-1">
+            <span className="flex flex-wrap gap-x-1 gap-y-2 mt-2">
               {badges.map((badge, index) => (
                 <Badge
                   variant="secondary"
