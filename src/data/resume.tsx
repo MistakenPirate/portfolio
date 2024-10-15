@@ -9,18 +9,23 @@ export const DATA = {
   locationLink: "https://www.google.com/maps/place/guwahati",
   description:
     "Software Engineer. A problem solver at heart, I absolutely love tech",
-  summary:"A passionate full-stack developer with a love for startups, technology, and creativity. Currently pursuing my Computer Science degree from JEC, Jorhat, Assam, I like to apply first principles approch to problem solving. My interests span across anything artistic to random facts, keeping my curiosity as vast and dynamic as the tech world itself.",
+  summary:
+    "A passionate full-stack developer with a love for startups, technology, and creativity. Currently pursuing my Computer Science degree from JEC, Jorhat, Assam, I like to apply first principles approch to problem solving. My interests span across anything artistic to random facts, keeping my curiosity as vast and dynamic as the tech world itself.",
   avatarUrl: "/me.png",
   skills: [
     "React",
     "Next.js",
+    "Javascript",
     "Typescript",
     "Node.js",
     "Python",
     "Postgres",
+    "MongoDb",
     "Docker",
     "Java",
     "C++",
+    "Bash",
+    "Linux",
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
@@ -69,28 +74,35 @@ export const DATA = {
 
   work: [
     {
-      company: "Funding Operations America LLC.",
+      company: "Funding Opportunities America LLC.",
       href: "https://www.fundingopportunitiesamerica.com/",
-      badges: ['Next js','Typescript','Supabase','Postgres','Prisma','Clerk'],
+      badges: [
+        "Next js",
+        "Typescript",
+        "Supabase",
+        "Postgres",
+        "Prisma",
+        "Clerk",
+      ],
       location: "Remote, New Jersey, USA",
       title: "Software Engineer Intern",
       logoUrl: "/foa.png",
       start: "September 2024",
       end: "Present",
-      description:"",
+      description: "",
       //   "Implemented the Bitcoin discreet log contract (DLC) protocol specifications as an open source Typescript SDK. Dockerized all microservices and setup production kubernetes cluster. Architected a data lake using AWS S3 and Athena for historical backtesting of bitcoin trading strategies. Built a mobile app using react native and typescript.",
     },
     {
       company: "Telescope Records",
-      badges: ['React Native','Typescript','Firebase'],
+      badges: ["React Native", "Typescript", "Firebase"],
       href: "https://telescoperecords.com",
       location: "Hybrid, Jorhat, Assam",
       title: "Founding Engineer",
       logoUrl: "/telescope.png",
       start: "June 2024",
       end: "Present",
-      description:""
-        //"Implemented a custom Kubernetes controller in Go to automate the deployment of MySQL and ProxySQL custom resources in order to enable 2,000+ internal developers to instantly deploy their app databases to production. Wrote several scripts in Go to automate MySQL database failovers while maintaining master-slave replication topologies and keeping Zookeeper nodes consistent with changes.",
+      description: "",
+      //"Implemented a custom Kubernetes controller in Go to automate the deployment of MySQL and ProxySQL custom resources in order to enable 2,000+ internal developers to instantly deploy their app databases to production. Wrote several scripts in Go to automate MySQL database failovers while maintaining master-slave replication topologies and keeping Zookeeper nodes consistent with changes.",
     },
     // {
     //   company: "Nvidia",
@@ -204,8 +216,7 @@ export const DATA = {
         },
       ],
       image: "/docdocgo.png",
-      video:
-        "",
+      video: "",
     },
     // {
     //   title: "Magic UI",
@@ -687,5 +698,5 @@ export const DATA = {
   //     ],
   //   },
   // ],
-   hackathons:[]
+  hackathons: [],
 } as const;

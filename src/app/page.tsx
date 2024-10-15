@@ -15,6 +15,7 @@ const BLUR_FADE_DELAY = 0.04;
 const iconSlug = [
   "react",
   "nextdotjs",
+  "javascript",
   "typescript",
   "nodedotjs",
   "python",
@@ -26,6 +27,10 @@ const iconSlug = [
   "c",
   "nginx",
   "visualstudiocode",
+  "mongodb",
+  "bash",
+  "linux",
+  "tailwindcss"
 ];
 
 export default function Page() {
