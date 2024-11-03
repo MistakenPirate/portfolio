@@ -1,0 +1,392 @@
+---
+title: "Basic Programming Constructs"
+publishedAt: "2024-11-03"
+summary: "A blog for a coding club bootcamp at our uni"
+---
+
+## Table of Contents
+
+1. Basic C++ Boilerplate
+2. Data Types
+3. Variables
+4. Operators
+5. Control Structures
+    - Conditional Statements
+    - Loops
+6. Functions
+7. Arrays
+8. Pointers
+9. Conclusion
+
+---
+
+## 1. Basic C++ Boilerplate Code
+
+Boilerplate code is the standard code structure that is required to set up a C++ program. Here is a basic template to start a C++ program:
+
+### Basic C++ Program Structure
+
+```cpp
+#include <iostream> // Header file for input and output
+using namespace std;
+
+// Main function - execution starts here
+int main() {
+    // Your code goes here
+    cout << "Hello, World!" << endl; // Output to the console
+    return 0; // Return 0 to indicate successful execution
+}
+
+```
+
+### Explanation of the Boilerplate:
+
+- `#include <iostream>`: This directive includes the input/output stream library, allowing the program to use `cout` and `cin`.
+- `using namespace std;`: This statement allows the program to use standard library functions without prefixing them with `std::`.
+- `int main()`: This defines the main function, where program execution begins.
+- `cout << "Hello, World!" << endl;`: This outputs text to the console.
+- `return 0;`: This signifies that the program ended successfully.
+
+---
+
+## 2. Data Types
+
+C++ supports various data types, which can be broadly categorized as follows:
+
+- **Fundamental Types**: `int`, `char`, `float`, `double`, `bool`
+- **Derived Types**: `arrays`, `functions`, `pointers`
+- **User-defined Types**: `struct`, `class`, `union`, `enum`
+
+### Example:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int age = 25;            // Integer type
+    char grade = 'A';       // Character type
+    float salary = 50000.50; // Floating-point type
+    bool isEmployed = true;  // Boolean type
+
+    cout << "Age: " << age << ", Grade: " << grade << ", Salary: " << salary << ", Employed: " << isEmployed << endl;
+    return 0;
+}
+
+```
+
+---
+
+## 3. Variables
+
+Variables are used to store data. They must be declared before use.
+
+### Syntax:
+
+```cpp
+// dataType variableName;
+int count; // declaration
+count = 10; // initialization
+
+```
+
+### Example:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int count;       // Declaration
+    count = 10;      // Initialization
+    cout << "Count: " << count << endl;
+    return 0;
+}
+
+```
+
+---
+
+## 4. Operators
+
+C++ provides several types of operators:
+
+- **Arithmetic Operators**: `+`, ``, ``, `/`, `%`
+- **Relational Operators**: `==`, `!=`, `<`, `>`, `<=`, `>=`
+- **Logical Operators**: `&&`, `||`, `!`
+- **Assignment Operators**: `=`, `+=`, `=`, `=`, `/=`, `%=`
+
+### Example:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a = 10, b = 20;
+    int sum = a + b;                  // Arithmetic
+    bool result = (a < b) && (b > 15); // Logical
+
+    cout << "Sum: " << sum << ", Result: " << result << endl;
+    return 0;
+}
+
+```
+
+---
+
+## 5. Control Structures
+
+Control structures dictate the flow of control in a program.
+
+### Conditional Statements
+
+- **If Statement**
+
+```cpp
+if (condition) {
+    // code to execute if condition is true
+}
+
+```
+
+### Example:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int number = 5;
+
+    if (number > 0) {
+        cout << number << " is positive." << endl;
+    }
+    return 0;
+}
+
+```
+
+- **Switch Statement**
+
+```cpp
+switch (variable) {
+    case value1:
+        // code
+        break;
+    case value2:
+        // code
+        break;
+    default:
+        // code
+}
+
+```
+
+### Example:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int day = 4;
+
+    switch (day) {
+        case 1:
+            cout << "Monday" << endl;
+            break;
+        case 2:
+            cout << "Tuesday" << endl;
+            break;
+        case 3:
+            cout << "Wednesday" << endl;
+            break;
+        case 4:
+            cout << "Thursday" << endl;
+            break;
+        default:
+            cout << "Invalid day" << endl;
+    }
+    return 0;
+}
+
+```
+
+### Loops
+
+- **For Loop**
+
+```cpp
+for (initialization; condition; increment) {
+    // code to execute
+}
+
+```
+
+### Example:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    for (int i = 0; i < 5; i++) {
+        cout << "Iteration: " << i << endl;
+    }
+    return 0;
+}
+
+```
+
+- **While Loop**
+
+```cpp
+while (condition) {
+    // code to execute
+}
+
+```
+
+### Example:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int count = 0;
+
+    while (count < 5) {
+        cout << "Count: " << count << endl;
+        count++;
+    }
+    return 0;
+}
+
+```
+
+- **Do-While Loop**
+
+```cpp
+do {
+    // code to execute
+} while (condition);
+
+```
+
+### Example:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int count = 0;
+
+    do {
+        cout << "Count: " << count << endl;
+        count++;
+    } while (count < 5);
+    return 0;
+}
+
+```
+
+---
+
+## 6. Functions
+
+Functions are reusable blocks of code that perform a specific task.
+
+### Syntax:
+
+```cpp
+returnType functionName(parameterList) {
+    // function body
+}
+
+```
+
+### Example:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+// Function to add two numbers
+int add(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    int result = add(5, 10); // Function call
+    cout << "Sum: " << result << endl;
+    return 0;
+}
+
+```
+
+---
+
+## 7. Arrays
+
+Arrays are used to store multiple values of the same data type in a single variable.
+
+### Declaration:
+
+```cpp
+dataType arrayName[arraySize];
+
+```
+
+### Example:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int numbers[5] = {1, 2, 3, 4, 5}; // Declaration and initialization
+
+    for (int i = 0; i < 5; i++) {
+        cout << "Number at index " << i << ": " << numbers[i] << endl;
+    }
+    return 0;
+}
+
+```
+
+---
+
+## 8. Pointers
+
+Pointers are variables that store the memory address of another variable.
+
+### Declaration:
+
+```cpp
+dataType* pointerName;
+
+```
+
+### Example:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num = 10;
+    int* ptr = &num; // Pointer to num
+
+    cout << "Value of num: " << num << endl;
+    cout << "Address of num: " << &num << endl;
+    cout << "Value of ptr: " << ptr << endl; // Address of num
+    cout << "Value pointed to by ptr: " << *ptr << endl; // Dereferencing ptr
+    return 0;
+}
+
+```
+
+---
