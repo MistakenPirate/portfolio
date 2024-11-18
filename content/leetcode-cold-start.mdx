@@ -1,0 +1,347 @@
+---
+title: "DCode Session 2: Leetcode Cold Start"
+publishedAt: "2024-11-17"
+summary: "A blog for a coding club bootcamp at our uni"
+---
+
+
+### **Call by Value vs Call by Reference in C++**
+
+1. **Call by Value**:
+    - A copy of the actual parameter is passed to the function.
+    - Changes made to the parameter inside the function do not reflect in the original variable.
+    - Example:
+        
+        ```cpp
+        void increment(int x) {
+            x++;
+        }
+        int main() {
+            int a = 5;
+            increment(a); // a remains 5
+            return 0;
+        }
+        
+        ```
+        
+2. **Call by Reference**:
+    - The actual memory location (address) of the variable is passed to the function.
+    - Changes made inside the function affect the original variable.
+    - Example:
+        
+        ```cpp
+        void increment(int *x) {
+            (*x)++;
+        }
+        int main() {
+            int a = 5;
+            increment(&a); // a becomes 6
+            return 0;
+        }
+        ```
+        
+
+---
+
+### **Pass by Reference in C++**
+
+Pass by reference allows a function to modify a variable directly by passing its reference (address). This avoids creating a copy of the variable, thus being more memory efficient.
+
+**Syntax Example**:
+
+```cpp
+void increment(int &x) {
+    x++;
+}
+int main() {
+    int a = 5;
+    increment(a); // 'a' becomes 6
+    return 0;
+}
+
+```
+
+---
+
+### **Solutions for Problems**
+
+### **1. Two Sum**
+
+**Using `int[]`**:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+void twoSum(int arr[], int n, int target) {
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (arr[i] + arr[j] == target) {
+                cout << "Indices: " << i << ", " << j << endl;
+                return;
+            }
+        }
+    }
+    cout << "No solution found" << endl;
+}
+
+int main() {
+    int arr[] = {2, 7, 11, 15};
+    int target = 9;
+    int n = sizeof(arr) / sizeof(arr[0]);
+    twoSum(arr, n, target);
+    return 0;
+}
+
+```
+
+**Using `vector` (LeetCode way)**:
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+using namespace std;
+
+    for (int i = 0; i < arr.size(); i++) {
+        for (int j = i + 1; j < arr.size(); j++) {
+            if (arr[i] + arr[j] == target) {
+                cout << "Indices: " << i << ", " << j << endl;
+                return;
+            }
+        }
+    }
+    cout << "No solution found" << endl;
+
+int main() {
+    vector<int> nums = {2, 7, 11, 15};
+    int target = 9;
+    vector<int> result = twoSum(nums, target);
+    return 0;
+}
+
+```
+
+---
+
+### **What is a Class?**
+
+- A **class** is like a blueprint for creating objects.
+- It can hold:
+    - **Data**: Variables (like `vector<int> nums`).
+    - **Functions**: Methods that operate on the data (like solving a problem).
+
+Think of it as a way to organize code better.
+
+---
+
+### **Structure of a Class for LeetCode Problems**
+
+Here’s a minimal setup:
+
+```cpp
+class ProblemSolver {
+public:
+	//variables
+	int int1;
+	vector<int> vector1;
+		
+    // Function to solve the problem
+    void solveProblem(vector<int> nums) {
+        // Code to solve the problem
+    }
+};
+
+```
+
+---
+
+### **Step-by-Step: LeetCode "Two Sum" Example**
+
+### Code Explanation
+
+1. **Define a Class**: Create a `ProblemSolver` class.
+2. **Add a Function**: Add a method `twoSum` that solves the problem.
+3. **Call the Function**: Use the class to call the function.
+
+### Code
+
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+// Define the class
+class ProblemSolver {
+public:
+    // Method to solve "Two Sum"
+    vector<int> twoSum(vector<int> &nums, int target) {
+        for (int i = 0; i < nums.size(); i++) {
+            for (int j = i + 1; j < nums.size(); j++) {
+                if (nums[i] + nums[j] == target) {
+                    return {i, j}; // Return the indices
+                }
+            }
+        }
+        return {}; // Return empty if no solution
+    }
+};
+
+int main() {
+    vector<int> nums = {2, 7, 11, 15};
+    int target = 9;
+
+    ProblemSolver solver;
+    
+    vector<int> result = solver.twoSum(nums, target);
+
+    if (!result.empty()) {
+        cout << "Indices: " << result[0] << ", " << result[1] << endl;
+    } else {
+        cout << "No solution found" << endl;
+    }
+
+    return 0;
+}
+
+```
+
+---
+
+### **Key Points for Beginners**
+
+1. **Class Basics**:
+    - `public`: Allows functions to be accessed outside the class.
+    - Methods (functions inside a class) operate on the input provided.
+2. **Why Use Classes?**
+    - Keeps code neat.
+    - Easier to reuse for multiple problems.
+3. **How to Call a Method?**
+    - Create an object: `ProblemSolver solver;`
+    - Use the object to call the method: `solver.twoSum(nums, target);`
+
+---
+
+### **2. Remove Duplicates from Sorted Array**
+
+**Using `int[]`**:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int removeDuplicates(int arr[], int n) {
+    if (n == 0) return 0;
+    int index = 0;
+    for (int i = 1; i < n; i++) {
+        if (arr[i] != arr[index]) {
+            index++;
+            arr[index] = arr[i];
+        }
+    }
+    return index + 1;
+}
+
+int main() {
+    int arr[] = {1, 1, 2, 2, 3};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int newLength = removeDuplicates(arr, n);
+    cout << "New length: " << newLength << endl;
+    return 0;
+}
+
+```
+
+**Using `vector` (LeetCode way)**:
+
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int removeDuplicates(vector<int> &nums) {
+    if (nums.size() == 0) return 0;
+    int index = 0;
+    for (int i = 1; i < nums.size(); i++) {
+        if (nums[i] != nums[index]) {
+            index++;
+            nums[index] = nums[i];
+        }
+    }
+    return index + 1;
+}
+
+int main() {
+    vector<int> nums = {1, 1, 2, 2, 3};
+    int newLength = removeDuplicates(nums);
+    cout << "New length: " << newLength << endl;
+    return 0;
+}
+
+```
+
+---
+
+### **3. Move Zeroes**
+
+**Using `int[]`**:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+void moveZeroes(int arr[], int n) {
+    int index = 0; // Points to the next non-zero position
+    for (int i = 0; i < n; i++) {
+        if (arr[i] != 0) {
+            arr[index++] = arr[i];
+        }
+    }
+    while (index < n) {
+        arr[index++] = 0;
+    }
+}
+
+int main() {
+    int arr[] = {0, 1, 0, 3, 12};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    moveZeroes(arr, n);
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+    return 0;
+}
+
+```
+
+**Using `vector` (LeetCode way)**:
+
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void moveZeroes(vector<int> &nums) {
+    int index = 0; // Points to the next non-zero position
+    for (int i = 0; i < nums.size(); i++) {
+        if (nums[i] != 0) {
+            nums[index++] = nums[i];
+        }
+    }
+    while (index < nums.size()) {
+        nums[index++] = 0;
+    }
+}
+
+int main() {
+    vector<int> nums = {0, 1, 0, 3, 12};
+    moveZeroes(nums);
+    for (int num : nums) {
+        cout << num << " ";
+    }
+    cout << endl;
+    return 0;
+}
+
+```
