@@ -30,7 +30,14 @@ const iconSlug = [
   "mongodb",
   "bash",
   "linux",
-  "tailwindcss"
+  "tailwindcss",
+  "kubernetes",
+  "mysql",
+  "express",
+  "fastapi",
+  "hono",
+  "cloudflare",
+  "hetzner"
 ];
 
 export default function Page() {
