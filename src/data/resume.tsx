@@ -85,7 +85,7 @@ export const DATA = {
         "Kubernetes",
         "CI/CD",
       ],
-      location: "Bangalore, Karnataka, India",
+      location: "Remote, Bangalore, India",
       title: "SDE Intern",
       logoUrl: "/nxtjob.jpeg",
       start: "February 2025",
