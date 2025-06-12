@@ -220,7 +220,7 @@ export const DATA = {
     {
       school: "Jorhat Engineering College",
       href: "https://jecassam.ac.in/",
-      degree: "B.Tech CSE | CGPA: 9.14 (Upto 5th Sem)",
+      degree: "B.Tech CSE | CGPA: 9.12 (Upto 5th Sem)",
       logoUrl: "/jec.png",
       start: "2022",
       end: "2026",
