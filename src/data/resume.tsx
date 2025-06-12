@@ -23,7 +23,8 @@ export const DATA = {
     "MySQL",
     "MongoDb",
     "Docker",
-    "Java",
+    "Go",
+    "Rust",
     "C++",
     "Bash",
     "Linux",
@@ -75,10 +76,29 @@ export const DATA = {
   },
 
   work: [
+        {
+      company: "NeuralTutor",
+      href: "https://neuraltutor.me",
+      badges: [
+        "React Js",
+        "Typescript",
+        "Postgres SQL",
+        "Docker",
+      ],
+      location: "Assam, India",
+      title: "Co-Founder & Lead Backend/Devops Engineer",
+      logoUrl: "/neuraltutor.png",
+      start: "April 2025",
+      end: "Present",
+      description: "",
+      //   "Implemented the Bitcoin discreet log contract (DLC) protocol specifications as an open source Typescript SDK. Dockerized all microservices and setup production kubernetes cluster. Architected a data lake using AWS S3 and Athena for historical backtesting of bitcoin trading strategies. Built a mobile app using react native and typescript.",
+    },
     {
       company: "NxtJob.Ai",
       href: "https://nxtjob.ai",
       badges: [
+        "Next Js",
+        "Expo",
         "Typescript",
         "MySQL",
         "Docker",
@@ -111,18 +131,18 @@ export const DATA = {
       description: "",
       //   "Implemented the Bitcoin discreet log contract (DLC) protocol specifications as an open source Typescript SDK. Dockerized all microservices and setup production kubernetes cluster. Architected a data lake using AWS S3 and Athena for historical backtesting of bitcoin trading strategies. Built a mobile app using react native and typescript.",
     },
-    {
-      company: "Telescope Records",
-      badges: ["React", "Typescript", "Firebase"],
-      href: "https://telescoperecords.com",
-      location: "Hybrid, Jorhat, Assam",
-      title: "Founding Engineer",
-      logoUrl: "/telescope.png",
-      start: "June 2024",
-      end: "Present",
-      description: "",
-      //"Implemented a custom Kubernetes controller in Go to automate the deployment of MySQL and ProxySQL custom resources in order to enable 2,000+ internal developers to instantly deploy their app databases to production. Wrote several scripts in Go to automate MySQL database failovers while maintaining master-slave replication topologies and keeping Zookeeper nodes consistent with changes.",
-    },
+    // {
+    //   company: "Telescope Records",
+    //   badges: ["React", "Typescript", "Firebase"],
+    //   href: "https://telescoperecords.com",
+    //   location: "Hybrid, Jorhat, Assam",
+    //   title: "Founding Engineer",
+    //   logoUrl: "/telescope.png",
+    //   start: "June 2024",
+    //   end: "Present",
+    //   description: "",
+    //   //"Implemented a custom Kubernetes controller in Go to automate the deployment of MySQL and ProxySQL custom resources in order to enable 2,000+ internal developers to instantly deploy their app databases to production. Wrote several scripts in Go to automate MySQL database failovers while maintaining master-slave replication topologies and keeping Zookeeper nodes consistent with changes.",
+    // },
     // {
     //   company: "Nvidia",
     //   href: "https://nvidia.com/",
@@ -200,7 +220,7 @@ export const DATA = {
     {
       school: "Jorhat Engineering College",
       href: "https://jecassam.ac.in/",
-      degree: "B.Tech in Computer Science and Engineering",
+      degree: "B.Tech CSE | CGPA: 9.14 (Upto 5th Sem)",
       logoUrl: "/jec.png",
       start: "2022",
       end: "2026",
@@ -208,33 +228,56 @@ export const DATA = {
   ],
   projects: [
     {
-      title: "DocDocGo",
-      href: "https://docdocgo.vercel.app",
-      dates: "July 2024",
+      title: "CRedis",
+      // href: "",
+      dates: "Feb 2025",
       active: true,
       description:
-        "A document editor made using full stack Next Js, Tailwind and ShadCn library. It uses similar routing structure as Google docs. It has Postgres SQL for database and Prisma as an ORM. Typescript for type safety.",
+        "Redis prototype built in c with basic GET, SET, UPDATE, DELETE operations, IO Multiplexing using select(). Supports TCP connections and RESP Protocol. All implemented from scratch.",
       technologies: [
-        "Next.js",
+        "C",
+      ],
+      links: [
+        // {
+        //   type: "Website",
+        //   href: "https://docdocgo.vercel.app",
+        //   icon: <Icons.globe className="size-3" />,
+        // },
+        {
+          type: "Source",
+          href: "https://github.com/MistakenPirate/credis",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/redis.png",
+      video: "",
+    },
+    {
+      title: "NeuralTutor",
+      // href: "",
+      dates: "April 2025",
+      active: true,
+      description:
+        "Why call it a project when you can make a startup out of it. Made by me and three of my friends. Personalized learning for everyone.",
+      technologies: [
+        "React Js",
+        "PostgresSQL",
         "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "ShadCn UI",
+        "Docker"
       ],
       links: [
         {
           type: "Website",
-          href: "https://docdocgo.vercel.app",
+          href: "https://neuraltutor.me",
           icon: <Icons.globe className="size-3" />,
         },
-        {
-          type: "Source",
-          href: "https://github.com/MistakenPirate/docdocgo",
-          icon: <Icons.github className="size-3" />,
-        },
+        // {
+        //   type: "Source",
+        //   href: "https://github.com/MistakenPirate/credis",
+        //   icon: <Icons.github className="size-3" />,
+        // },
       ],
-      image: "/docdocgo.png",
+      image: "/neura.png",
       video: "",
     },
     // {

@@ -21,7 +21,6 @@ const iconSlug = [
   "python",
   "postgresql",
   "docker",
-  "java",
   "cplusplus",
   "github",
   "c",
@@ -33,9 +32,12 @@ const iconSlug = [
   "mysql",
   "express",
   "fastapi",
-  "hono",
   "cloudflare",
-  "hetzner"
+  "hetzner",
+  "go",
+  "rust",
+  "solana",
+  "redis",
 ];
 
 export default function Page() {
