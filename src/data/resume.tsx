@@ -82,7 +82,7 @@ export const DATA = {
       badges: [
         "React Js",
         "Typescript",
-        "Postgres SQL",
+        "PostgreSQL",
         "Docker",
       ],
       location: "Assam, India",
@@ -119,7 +119,7 @@ export const DATA = {
       badges: [
         "Next js",
         "Typescript",
-        "Postgres",
+        "PostgreSQL",
         "Docker",
         "Redis",
       ],
