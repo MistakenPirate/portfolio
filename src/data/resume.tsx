@@ -86,7 +86,7 @@ export const DATA = {
         "Docker",
       ],
       location: "Assam, India",
-      title: "Co-Founder & Lead Backend/Devops Engineer",
+      title: "Co-Founder",
       logoUrl: "/neuraltutor.png",
       start: "April 2025",
       end: "Present",
