@@ -48,28 +48,30 @@ function QuoteSection() {
   const nextQuote = () => setIndex((i) => (i === QUOTES.length - 1 ? 0 : i + 1));
   const quote = QUOTES[index];
   return (
-    <div className="w-full">
-      <h2 className="text-xl font-bold mb-2">Quotes</h2>
-      <div className="relative w-full min-h-[100px] p-3 bg-background rounded-md border border-border text-left flex flex-col justify-center">
-        {/* Anime GIF sits on the top right, above the border, as if sitting on the border */}
-        <img
-          src="/anime.gif"
-          alt="Anime GIF"
-          className="h-20 w-auto object-contain"
-          style={{ position: 'absolute', right: '-24px', top: '-48px', pointerEvents: 'none', zIndex: 10 }}
-        />
-        <Markdown className="text-base italic prose prose-neutral dark:prose-invert">{`“${quote.text}”`}</Markdown>
-        <p className="mt-1 text-xs text-muted-foreground">— {quote.author}</p>
-        <div className="flex justify-between mt-3">
-          <button onClick={prevQuote} aria-label="Previous quote" className="font-mono text-xs px-2 py-1 rounded hover:bg-accent border border-border">
-            prev quote
-          </button>
-          <button onClick={nextQuote} aria-label="Next quote" className="font-mono text-xs px-2 py-1 rounded hover:bg-accent border border-border">
-            next quote
-          </button>
+    <BlurFade delay={BLUR_FADE_DELAY * 4}>
+      <div className="w-full">
+        <h2 className="text-xl font-bold mb-2">Quotes</h2>
+        <div className="relative w-full min-h-[100px] p-3 bg-background rounded-md border border-border text-left flex flex-col justify-center">
+          {/* Anime GIF sits on the top right, above the border, as if sitting on the border */}
+          <img
+            src="/anime.gif"
+            alt="Anime GIF"
+            className="h-20 w-auto object-contain"
+            style={{ position: 'absolute', right: '-24px', top: '-48px', pointerEvents: 'none', zIndex: 10 }}
+          />
+          <Markdown className="text-base italic prose prose-neutral dark:prose-invert">{`“${quote.text}”`}</Markdown>
+          <p className="mt-1 text-xs text-muted-foreground">— {quote.author}</p>
+          <div className="flex justify-between mt-3">
+            <button onClick={prevQuote} aria-label="Previous quote" className="font-mono text-xs px-2 py-1 rounded hover:bg-accent border border-border">
+              prev quote
+            </button>
+            <button onClick={nextQuote} aria-label="Next quote" className="font-mono text-xs px-2 py-1 rounded hover:bg-accent border border-border">
+              next quote
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+    </BlurFade>
   );
 }
 import { HackathonCard } from "@/components/hackathon-card";
