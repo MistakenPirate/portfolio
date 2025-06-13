@@ -1,3 +1,77 @@
+"use client";
+import { useState, useEffect } from "react";
+// Example quotes array (markdown supported)
+const QUOTES = [
+  {
+    text: "If you learn to build and you learn to sell, you will be unstoppable.",
+    author: "Naval Ravikant"
+  },
+  {
+    text: "If you do what you love, you'll never work a day in your life.",
+    author: "Confucius"
+  },
+  {
+    text: "The universe is change; our life is what our thoughts make it.",
+    author: "Marcus Aurelius"
+  },
+  {
+    text: "You have the right to work, but never to the fruit of work.\nDo your karma, but do not expect results.",
+    author: "Krishna (Bhagavad Gita)"
+  },
+  {
+    text: "Strangers passing in the street, by chance two separate glances meet, and I am you and what I see is me.",
+    author: "Pink Floyd (Echoes)"
+  },
+  {
+    text: "No such thing as a life that's better than yours.",
+    author: "J. Cole"
+  },
+  {
+    text: "To see the world, things dangerous to come to, to see behind walls, to draw closer, to find each other and to feel. That is the purpose of life.",
+    author: "The Secret Life of Walter Mitty"
+  },
+  {
+    text: "If I have seen further it is by standing on the shoulders of Giants.",
+    author: "Isaac Newton"
+  },
+];
+
+
+
+function QuoteSection() {
+  const [index, setIndex] = useState(0);
+  useEffect(() => {
+    // Only run on client
+    setIndex(Math.floor(Math.random() * QUOTES.length));
+  }, []);
+  const prevQuote = () => setIndex((i) => (i === 0 ? QUOTES.length - 1 : i - 1));
+  const nextQuote = () => setIndex((i) => (i === QUOTES.length - 1 ? 0 : i + 1));
+  const quote = QUOTES[index];
+  return (
+    <div className="w-full">
+      <h2 className="text-xl font-bold mb-2">Quotes</h2>
+      <div className="relative w-full min-h-[100px] p-3 bg-background rounded-md border border-border text-left flex flex-col justify-center">
+        {/* Anime GIF sits on the top right, above the border, as if sitting on the border */}
+        <img
+          src="/anime.gif"
+          alt="Anime GIF"
+          className="h-20 w-auto object-contain"
+          style={{ position: 'absolute', right: '-24px', top: '-48px', pointerEvents: 'none', zIndex: 10 }}
+        />
+        <Markdown className="text-base italic prose prose-neutral dark:prose-invert">{`“${quote.text}”`}</Markdown>
+        <p className="mt-1 text-xs text-muted-foreground">— {quote.author}</p>
+        <div className="flex justify-between mt-3">
+          <button onClick={prevQuote} aria-label="Previous quote" className="font-mono text-xs px-2 py-1 rounded hover:bg-accent border border-border">
+            prev quote
+          </button>
+          <button onClick={nextQuote} aria-label="Next quote" className="font-mono text-xs px-2 py-1 rounded hover:bg-accent border border-border">
+            next quote
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
 import { HackathonCard } from "@/components/hackathon-card";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
@@ -77,6 +151,9 @@ export default function Page() {
             {DATA.summary}
           </Markdown>
         </BlurFade>
+      </section>
+      <section id="quotes" className="-mt-6">
+        <QuoteSection />
       </section>
       <section id="work">
         <div className="flex min-h-0 flex-col gap-y-3">
