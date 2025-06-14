@@ -33,7 +33,7 @@ export function GitHubGraph() {
   }, [currentYear]);
 
   const getColor = (count: number) => {
-    if (count === 0) return "#1e1e1e";
+    if (count === 0) return "#333333";
     if (count <= 3) return "#0e4429";
     if (count <= 6) return "#006d32";
     if (count <= 9) return "#26a641";
@@ -43,11 +43,11 @@ export function GitHubGraph() {
   if (loading) {
     return (
       <BlurFade delay={BLUR_FADE_DELAY}>
-        <div className="w-full bg-white/10 backdrop-blur-sm rounded-lg p-4">
+        <div className="w-full bg-[#282a36] backdrop-blur-sm rounded-lg p-4">
           <div className="flex justify-between items-center mb-4">
             <h3 className="text-white/80 text-lg font-medium">GitHub Contributions {currentYear}</h3>
           </div>
-          <div className="overflow-x-auto bg-white/5 p-4 rounded-lg flex items-center justify-center h-[100px]">
+          <div className="overflow-x-auto bg-[#282a36] p-4 rounded-lg flex items-center justify-center h-[100px]">
             <div className="text-white/50">Loading contributions...</div>
           </div>
         </div>
@@ -79,11 +79,11 @@ export function GitHubGraph() {
 
   return (
     <BlurFade delay={BLUR_FADE_DELAY}>
-      <div className="w-full bg-white/10 backdrop-blur-sm rounded-lg p-4">
+      <div className="w-full bg-[#282a36] backdrop-blur-sm rounded-lg p-4">
         <div className="flex justify-between items-center mb-4">
           <h3 className="text-white/80 text-lg font-medium">GitHub Contributions {currentYear}</h3>
         </div>
-        <div className="overflow-x-auto bg-white/5 p-4 rounded-lg">
+        <div className="overflow-x-auto bg-[#282a36] p-4 rounded-lg">
           <div className="flex flex-col">
             {/* Contribution graph */}
             <div className="flex items-start gap-1">
