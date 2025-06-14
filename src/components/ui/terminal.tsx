@@ -110,13 +110,13 @@ export function Terminal() {
     <div>
       <div className="flex mb-4">
         <button
-          className={`px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-base rounded-l-lg ${activeTab === "macOS" ? "bg-[#282a36] text-[#f8f8f2]" : "bg-[#44475a] text-[#f8f8f2]"}`}
+          className={`px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-base rounded-l-lg ${activeTab === "macOS" ? "bg-[#44475a] text-[#f8f8f2]" : "bg-[#282a36] text-[#f8f8f2]"}`}
           onClick={() => setActiveTab("macOS")}
         >
           macOS
         </button>
         <button
-          className={`px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-base rounded-r-lg ${activeTab === "Linux" ? "bg-[#282a36] text-[#f8f8f2]" : "bg-[#44475a] text-[#f8f8f2]"}`}
+          className={`px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-base rounded-r-lg ${activeTab === "Linux" ? "bg-[#44475a] text-[#f8f8f2]" : "bg-[#282a36] text-[#f8f8f2]"}`}
           onClick={() => setActiveTab("Linux")}
         >
           Linux
