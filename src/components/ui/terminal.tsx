@@ -77,17 +77,17 @@ function TypewriterTerminal({ data, title }: { data: string; title: string }) {
 
   return (
     <BlurFade delay={BLUR_FADE_DELAY}>
-      <div className="font-mono text-sm bg-[#282a36] text-[#f8f8f2] rounded-lg p-4 shadow-lg overflow-hidden mb-8" role="textbox" aria-label={`${title} Terminal Output`}>
-        <div className="flex items-center gap-2 mb-3">
-          <div className="h-3 w-3 rounded-full bg-[#ff5f56]"></div>
-          <div className="h-3 w-3 rounded-full bg-[#ffbd2e]"></div>
-          <div className="h-3 w-3 rounded-full bg-[#27c93f]"></div>
+      <div className="font-mono text-[10px] sm:text-sm bg-[#282a36] text-[#f8f8f2] rounded-lg p-2 sm:p-4 shadow-lg overflow-hidden mb-8" role="textbox" aria-label={`${title} Terminal Output`}>
+        <div className="flex items-center gap-1 sm:gap-2 mb-2 sm:mb-3">
+          <div className="h-2 w-2 sm:h-3 sm:w-3 rounded-full bg-[#ff5f56]"></div>
+          <div className="h-2 w-2 sm:h-3 sm:w-3 rounded-full bg-[#ffbd2e]"></div>
+          <div className="h-2 w-2 sm:h-3 sm:w-3 rounded-full bg-[#27c93f]"></div>
         </div>
-        <div className="whitespace-pre">
+        <div className="whitespace-pre overflow-x-auto">
           <span className="text-[#50fa7b]">➜</span>
           <span className="text-[#bd93f9]"> ~ </span>
           <span className="text-[#f8f8f2]">neofetch</span>
-          <div className="mt-2">
+          <div className="mt-1 sm:mt-2">
             {text}
           </div>
           {showPrompt && (
@@ -110,13 +110,13 @@ export function Terminal() {
     <div>
       <div className="flex mb-4">
         <button
-          className={`px-4 py-2 rounded-l-lg ${activeTab === "macOS" ? "bg-[#282a36] text-[#f8f8f2]" : "bg-[#44475a] text-[#f8f8f2]"}`}
+          className={`px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-base rounded-l-lg ${activeTab === "macOS" ? "bg-[#282a36] text-[#f8f8f2]" : "bg-[#44475a] text-[#f8f8f2]"}`}
           onClick={() => setActiveTab("macOS")}
         >
           macOS
         </button>
         <button
-          className={`px-4 py-2 rounded-r-lg ${activeTab === "Linux" ? "bg-[#282a36] text-[#f8f8f2]" : "bg-[#44475a] text-[#f8f8f2]"}`}
+          className={`px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-base rounded-r-lg ${activeTab === "Linux" ? "bg-[#282a36] text-[#f8f8f2]" : "bg-[#44475a] text-[#f8f8f2]"}`}
           onClick={() => setActiveTab("Linux")}
         >
           Linux
