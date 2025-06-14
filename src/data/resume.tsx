@@ -10,7 +10,7 @@ export const DATA = {
   description:
     "Software Engineer. A problem solver at heart, I absolutely love tech",
   summary:
-    "A passionate full-stack and devops engineer with a love for startups, technology, and creativity. Currently in my final year of CS degree from JEC, Assam, I like to apply first principles approach to problem solving. My interests span across anything artistic (movies / music / literature) to random facts, keeping my curiosity as vast and dynamic as the tech world itself.",
+    "A 21 year old full-stack and devops engineer with a love for startups, technology, and creativity. Currently in my final year of CS degree from JEC, Assam, I like to apply first principles approach to problem solving. My interests span across anything artistic (movies / music / literature) to random facts, keeping my curiosity as vast and dynamic as the tech world itself.",
   avatarUrl: "/me.png",
   skills: [
     "React",
